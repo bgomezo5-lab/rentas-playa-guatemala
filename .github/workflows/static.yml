@@ -1,9 +1,8 @@
-# Workflow depurado para Rentas Playa Guatemala
 name: Deploy static content to Pages
 
 on:
   push:
-    branches: ["master"]
+    branches: ["master"] # Tu rama es master
   workflow_dispatch:
 
 permissions:
@@ -31,7 +30,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Solo subimos la carpeta donde Flutter generó la web
+          # SOLO esta línea importa: la ruta a tu carpeta web
           path: 'build/web'
 
       - name: Deploy to GitHub Pages
